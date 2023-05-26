@@ -3,6 +3,7 @@
   <% @list.bookmarks.each do |bookmark| %>
       <li class="card">
         <h3><%= bookmark.movie.title %></h3><br>
+        <p><%= bookmark.movie.rating %> / 10</p>
         <%= image_tag bookmark.movie.poster_url, alt: "#{bookmark.movie.title}", width: 200 %><br>
         <p><%= bookmark.movie.overview %></p>
         <p><strong><%= bookmark.comment %></strong>
