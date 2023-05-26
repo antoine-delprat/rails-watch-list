@@ -6,6 +6,8 @@
         <%= list.name %>
         <% if list.photo.attached? %>
           <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <%= cl_image_tag("cld-sample-3.jpeg", height: 300, width: 400, crop: :fill) %>
         <% end %>
       </li>
     <% end %>
