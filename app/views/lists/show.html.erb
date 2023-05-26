@@ -1,5 +1,8 @@
 <h1><%= @list.name %></h1>
-<ul>
+<% if @list.photo.attached? %>
+  <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+<ul class="card-page">
   <% @list.bookmarks.each do |bookmark| %>
       <li class="card">
         <h3><%= bookmark.movie.title %></h3><br>

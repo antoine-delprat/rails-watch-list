@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
+  before_action :set_lists, only: %i[index new create show]
 
   def index
-    @lists = List.all
   end
 
   def new
@@ -21,7 +21,11 @@ class ListsController < ApplicationController
 
   private
 
+  def set_lists
+    @lists = List.all
+  end
+
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end
